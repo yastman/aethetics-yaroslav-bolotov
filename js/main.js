@@ -13,4 +13,10 @@ let closeModal = document.querySelector(".close_btn");
 closeModal.onclick = function () {
   popup.classList.remove("open");
 };
-
+popup.onclick = function () {
+  popup.classList.remove("open");
+};
+let popupBox = document.querySelector(".popup_box");
+popupBox.onclick = function (event) {
+  event.stopPropagation();
+};
