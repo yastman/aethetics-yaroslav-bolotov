@@ -15,6 +15,7 @@ let closeModal = document.querySelector(".close_btn");
 closeModal.onclick = function () {
   popup.classList.remove("open");
 };
+
 popup.onclick = function () {
   popup.classList.remove("open");
 };
