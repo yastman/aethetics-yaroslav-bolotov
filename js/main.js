@@ -10,17 +10,23 @@ btns.forEach(function (item) {
 });
 
 // find  button to close modal
-let closeModal = document.querySelector(".close_btn");
 
-closeModal.onclick = function () {
+let closeBtn = document.querySelector(".close_btn");
+
+// add event  to close modal button
+
+closeBtn.onclick = function () {
   popup.classList.remove("open");
 };
+
+// outside click event
 
 popup.onclick = function () {
   popup.classList.remove("open");
 };
 
 // outside modal close
+
 let popupBox = document.querySelector(".popup_box");
 popupBox.onclick = function (event) {
   event.stopPropagation();
