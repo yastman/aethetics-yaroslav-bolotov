@@ -32,7 +32,7 @@ if (form) {
     form.style.display = "none";
     let thanks = document.createElement("div");
     thanks.classList.add("form-submitted");
-    thanks.innerHTML = "h2 class="apoinment__title'done'</h2
+    thanks.innerHTML = '<h2 class="apoinment__title"> Done</h2>';
     form.parentNode.appendChild(thanks);
   };
 }
