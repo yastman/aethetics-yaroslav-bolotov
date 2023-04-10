@@ -16,7 +16,7 @@ if (popup) {
     popup.classList.remove("open");
   };
   popup.onclick = function () {
-    popup.classList.remove("open");
+    popup.classList.remove("open" + "" + "");
   };
   let popupBox = document.querySelector(".popup_box");
   popupBox.onclick = function (event) {
@@ -29,6 +29,6 @@ let form = document.querySelector(".call_me");
 if (form) {
   form.onsubmit = function (event) {
     event.preventDefault();
-    console.log(form.elements);
+    console.log(form.elements.userName.value.length < 3);
   };
 }
