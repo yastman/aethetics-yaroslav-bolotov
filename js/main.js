@@ -29,6 +29,10 @@ let form = document.querySelector(".call_me");
 if (form) {
   form.onsubmit = function (event) {
     event.preventDefault();
-    console.log(form.elements.userName.value.length < 3);
+    form.style.display = "none";
+    let thanks = document.createElement("div");
+    thanks.classList.add("form-submitted");
+    thanks.innerHTML = "h2 class="apoinment__title'done'</h2
+    form.parentNode.appendChild(thanks);
   };
 }
