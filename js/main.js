@@ -29,9 +29,13 @@ let form = document.querySelector(".call_me");
 if (form) {
   form.onsubmit = function (event) {
     event.preventDefault();
+
+    let data = {};
+    console.log(form.elements);
     form.style.display = "none";
     let thanks = document.createElement("div");
     thanks.classList.add("form-submitted");
+    thanks.classList.add("form-submitted--success");
     thanks.innerHTML = '<h2 class="apoinment__title"> Done</h2>';
     form.parentNode.appendChild(thanks);
   };
