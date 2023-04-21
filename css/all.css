@@ -4108,5 +4108,11 @@ footer .layout .wrapper .payment-methods ul li:hover a img {
 .close_btn:active svg path {
   fill: #1c19bb;
 }
-/*popup*/
-/*homework*/
+.apoinment__title {
+  color: #0d270e;
+}
+.error-info {
+  color: red;
+  text-align: center;
+  margin: 0;
+}
