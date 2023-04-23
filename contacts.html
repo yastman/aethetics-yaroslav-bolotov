@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width; initial-scale=1" />
@@ -84,18 +84,23 @@
                   </div>
                   <div class="bottom-group">
                     <div class="column">
-                      <input
-                        type="text"
-                        name="userName"
-                        id="name"
-                        placeholder="Ваше ім’я"
-                      />
-                      <input
-                        type="tel"
-                        name="telephone"
-                        id="telephone"
-                        placeholder="Номер телефону"
-                      />
+                      <label class="call_me__label">
+                        <input
+                          type="text"
+                          name="userName"
+                          id="name"
+                          placeholder="Ваше ім’я"
+                        />
+                      </label>
+                      <label class="call_me__label">
+                        <input
+                          type="tel"
+                          name="telephone"
+                          id="telephone"
+                          placeholder="Номер телефону"
+                          pattern="[\+]\d{3}\s[\(]\d{2}[\)]\s\d{3}[\-]\d{2}[\-]\d{2}"
+                        />
+                      </label>
                     </div>
                     <div class="column button-wrapper">
                       <button type="submit" class="btn">
@@ -112,22 +117,24 @@
               <ul>
                 <li>
                   <a href="#" class="instagram"
-                    ><img src="./images/icon-instagram-default.png"
+                    ><img
+                      src="./images/icon-instagram-default.png"
+                      alt="instagram"
                   /></a>
                 </li>
                 <li>
                   <a href="#" class="mail"
-                    ><img src="./images/icon-email-default.png"
+                    ><img src="./images/icon-email-default.png" alt="mail"
                   /></a>
                 </li>
                 <li>
                   <a href="#" class="telephone"
-                    ><img src="./images/icon-phone-default.png"
+                    ><img src="./images/icon-phone-default.png" alt="telephone"
                   /></a>
                 </li>
                 <li>
                   <a href="#" class="address"
-                    ><img src="./images/icon-address-default.png"
+                    ><img src="./images/icon-address-default.png" alt="address"
                   /></a>
                 </li>
               </ul>

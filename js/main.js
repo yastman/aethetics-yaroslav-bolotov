@@ -30,26 +30,47 @@ form.onsubmit = function (event) {
 
   let data = {};
   let inputs = Array.from(form.elements);
-  let haveErrors = true;
-  let errorText = "где то случилась ошибка";
+  let haveErrors = false;
+  let errorText = null;
+  let inputWithError = null;
   inputs.forEach(function (item) {
-    // console.log(item.tagName);
     if (item.value && item.tagName.toLowerCase() !== "button") {
       data[item.name] = item.value;
       console.log(data);
     }
   });
+
+  console.log(inputs);
+
+  if (document.querySelector(".--error")) {
+    document.querySelector(".--error").classList.remove("--error");
+  }
+  if (document.querySelector(".error-info")) {
+    document.querySelector(".error-info").remove();
+  }
+
+  let inputWithErrors;
+  if (!data.telephone) {
+    errorText = "Write telephone";
+    inputWithErrors = form.elements.telephone;
+    console.log(inputWithErrors);
+  }
   if (!data.userName) {
     errorText = "Write name";
-  } else if (data.userName.length > 3) {
-    errorText = "write correct name";
-  } else if (!data.telephone) {
-    errorText = "Write telephone";
-  } else if (isNaN(data.telephone)) {
-    errorText = "write correct telephone";
-  } else {
-    haveError = false;
+    inputWithErrors = form.elements.userName;
+    console.log(inputWithErrors);
   }
+  if (data.userName && data.userName.length < 3) {
+    errorText = "need more then 3 symbol";
+    inputWithErrors = form.elements.userName;
+    console.log(inputWithErrors);
+  }
+  if (errorText) {
+    haveErrors = true;
+    inputWithError = null;
+    console.log(inputWithErrors);
+  }
+  console.log(!haveErrors);
   if (!haveErrors) {
     form.style.display = "none";
     let thanks = document.createElement("div");
@@ -57,6 +78,9 @@ form.onsubmit = function (event) {
     thanks.classList.add("form-submitted--success");
     thanks.innerHTML = '<h2 class="apoinment__title"> Done</h2>';
     form.parentNode.appendChild(thanks);
+    if (document.querySelector(".--error")) {
+      document.querySelector(".--error").classList.remove("--error");
+    }
   } else {
     if (document.querySelector(".error-info")) {
       document.querySelector(".error-info").innerText = errorText;
@@ -64,15 +88,20 @@ form.onsubmit = function (event) {
       let error = document.createElement("p");
       error.classList.add("error-info");
       error.innerText = errorText;
-      form.querySelector(".button-wrapper").insertBefore(
-        error,
-        inputs.find(function (item) {
-          return (
-            item.tagName.toLowerCase() === "button" &&
-            item.getAttribute("type") === "submit"
-          );
-        })
-      );
+      if (inputWithErrors) {
+        inputWithErrors.parentNode.appendChild(error);
+        inputWithErrors.classList.add("--error");
+      }
     }
   }
 };
+
+let telInputs = Array.from(document.querySelectorAll("input[type='tel']"));
+document.addEventListener("input", function (event) {
+  if (
+    event.target.tagName.toLowerCase() === "input" &&
+    event.target.getAttribute("type") === `tel`
+  ) {
+    console.log("test");
+  }
+});

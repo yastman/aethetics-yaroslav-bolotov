@@ -3585,14 +3585,14 @@ header .layout .wrapper .interface ul li.basket a:hover {
 }
 .contacts .layout .wrapper form .bottom-group .column input {
   padding: 5px 14px 13px;
-  font-family: "Candara";
+  font-family: "Candara", serif;
   font-style: normal;
   background: none;
   font-weight: 400;
   font-size: 20px;
   line-height: 150%;
   color: #fffbf5;
-  width: 276px;
+  width: 100%;
   border: 1px solid #fffbf5;
 }
 @media (max-width: 1140px) {
@@ -4115,4 +4115,8 @@ footer .layout .wrapper .payment-methods ul li:hover a img {
   color: red;
   text-align: center;
   margin: 0;
+}
+.call_me__label {
+  display: block;
+  position: relative;
 }
