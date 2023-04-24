@@ -102,6 +102,21 @@ document.addEventListener("input", function (event) {
     event.target.tagName.toLowerCase() === "input" &&
     event.target.getAttribute("type") === `tel`
   ) {
-    console.log("test");
+    let input = event.target;
+    if (input.value.length === 1 && input.value !== "+") {
+      input.value = "+" + input.value;
+    }
+    if (input.value.length === 4) {
+      input.value = input.value + " (";
+    }
+    if (input.value.length === 8) {
+      input.value = input.value + ") ";
+    }
+    if (input.value.length === 13 || input.value.length === 16) {
+      input.value = input.value + "-";
+    }
+    if (input.value.length > 18) {
+      input.value = input.value.slice(0, 19);
+    }
   }
 });
