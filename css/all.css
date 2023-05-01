@@ -3585,14 +3585,14 @@ header .layout .wrapper .interface ul li.basket a:hover {
 }
 .contacts .layout .wrapper form .bottom-group .column input {
   padding: 5px 14px 13px;
-  font-family: "Candara";
+  font-family: "Candara", serif;
   font-style: normal;
   background: none;
   font-weight: 400;
   font-size: 20px;
   line-height: 150%;
   color: #fffbf5;
-  width: 276px;
+  width: 100%;
   border: 1px solid #fffbf5;
 }
 @media (max-width: 1140px) {
@@ -4108,4 +4108,67 @@ footer .layout .wrapper .payment-methods ul li:hover a img {
 .close_btn:active svg path {
   fill: #1c19bb;
 }
-/*popup*/
+.apoinment__title {
+  color: #0d270e;
+}
+.error-info {
+  color: red;
+  text-align: center;
+  margin: 0;
+}
+.call_me__label {
+  display: block;
+  position: relative;
+}
+.services {
+  padding-top: 60px;
+  padding-bottom: 37px;
+  display: flex;
+  justify-content: space-around;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+.services.services--counters {
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+}
+.services__item {
+  max-width: 300px;
+  text-align: center;
+}
+.services.services--articles .services__item {
+  text-align: left;
+  max-width: 334px;
+}
+.services__icon {
+  margin-bottom: 30px;
+}
+.services__title {
+  font-size: 24px;
+  margin: 0 0 20px;
+  color: #2d5e5e;
+}
+.services.services--counters .services__title,
+.services.services--articles .services__title,
+.services__desc {
+  color: #fff;
+}
+.services.services--articles .services__title {
+  margin-bottom: 0;
+}
+
+.services__counter {
+  font-weight: 900;
+  font-size: 48px;
+  margin-bottom: 14px;
+}
+
+.services__header {
+  width: 100%;
+  font-size: 48px;
+  margin: 0 0 50px;
+}
+
+.services__cover {
+  margin-bottom: 24px;
+}
