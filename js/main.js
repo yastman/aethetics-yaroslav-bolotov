@@ -121,29 +121,102 @@
 //   }
 // });
 
-let numbersToAnimate = document.querySelectorAll(".services__number");
+// let numbersToAnimate = document.querySelectorAll(".services__number");
+//
+// document.addEventListener("scroll", function () {
+//   numbersToAnimate.forEach(function (item) {
+//     if (item.getBoundingClientRect().top <= window.innerHeight / 2) {
+//       startAnimate(item);
+//     }
+//   });
+// });
+//
+// function startAnimate(item) {
+//   let start = 0;
+//   let max = parseInt(item.getAttribute("data-max"));
+//   if (item.getAttribute("data-animated")) {
+//     item.setAttribute("data-animated", "true");
+//     let interval = setInterval(function () {
+//       console.log(max >= start);
+//       if (max >= start) {
+//         item.innerText = start;
+//         start++;
+//       } else {
+//         clearInterval(interval);
+//       }
+//     }, 10);
+//   }
+// }
 
-document.addEventListener("scroll", function () {
-  numbersToAnimate.forEach(function (item) {
-    if (item.getBoundingClientRect().top <= window.innerHeight / 2) {
-      startAnimate(item);
-    }
-  });
-});
+/*TODO:
+1 знайти линки
+2 знайти контент до этих линк
+3 связать эти линки
 
-function startAnimate(item) {
-  let start = 0;
-  let max = parseInt(item.getAttribute("data-max"));
-  if (item.getAttribute("data-animated")) {
-    item.setAttribute("data-animated", "true");
-    let interval = setInterval(function () {
-      console.log(max >= start);
-      if (max >= start) {
-        item.innerText = start;
-        start++;
-      } else {
-        clearInterval(interval);
-      }
-    }, 10);
-  }
-}
+ */
+
+// function Tabs(target) {
+// 	this.target = document.querySelector(target)
+// 	this.initTabs = () => {
+// 		Array.from(this.target.children).forEach(item => {
+// 			console.log(item)
+// 			const getContent = document.querySelector(
+// 				`.tab_content .${item.getAttribute('data-tab')}`
+// 			)
+// 			console.log(`.tab_content .${item.getAttribute('data-tab')}`)
+// 		})
+// 	}
+// }
+//
+// let tab = new Tabs('.tabs')
+// console.log(tab)
+// tab.initTabs()
+
+/*
+// Находим все табы и тексты
+const tabs = document.querySelectorAll('.tab_item')
+const texts = document.querySelectorAll('.tab_text')
+
+
+// Добавляем обработчик клика на каждый таб
+
+tabs.forEach((tab, index) => {
+	tab.addEventListener('click', () => {
+		// Скрываем все тексты
+		texts.forEach(text => {
+			text.style.display = 'none'
+		})
+
+		// Показываем нужный текст
+		texts[index].style.display = 'block'
+
+		// Добавляем класс "active" текущему табу
+		tabs.forEach(tab => {
+			tab.classList.remove('active')
+		})
+		tab.classList.add('active')
+	})
+})
+
+// Показываем первый текст по умолчанию
+texts[0].style.display = 'block'
+tabs[0].classList.add('active')
+ */
+
+let tabs = document.querySelectorAll('.tab_item')
+let texts = document.querySelectorAll('.tab_text')
+
+tabs.forEach((tab, index) => {
+	tab.addEventListener('click', () => {
+		texts.forEach(text => {
+			text.style.display = 'none'
+		})
+		texts[index].style.display = 'block'
+		tabs.forEach(tab => {
+			tab.classList.remove('active')
+		})
+		tab.classList.add('active')
+	})
+})
+texts[0].style.display = 'block'
+tabs[0].classList.add('active')
