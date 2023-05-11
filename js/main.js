@@ -1,19 +1,22 @@
-let tabs = document.querySelectorAll('.tab_item')
-let texts = document.querySelectorAll('.tab_text')
+const tabs = document.querySelectorAll(".tab_item");
+const texts = document.querySelectorAll(".tab_text");
+let activeIndex = 0;
+
+texts.forEach((text) => (text.style.display = "none"));
+
+function setActive(index) {
+  if (tabs[activeIndex]) {
+    tabs[activeIndex].classList.remove("active");
+    texts[activeIndex].style.display = "none";
+  }
+
+  activeIndex = index;
+  tabs[activeIndex].classList.add("active");
+  texts[activeIndex].style.display = "block";
+}
 
 tabs.forEach((tab, index) => {
-	tab.addEventListener('click', () => {
-		tabs.forEach(tab => {
-			tab.classList.remove('active')
-		})
-		tab.classList.add('active')
+  tab.addEventListener("click", () => setActive(index));
+});
 
-		texts.forEach(text => {
-			text.style.display = 'none'
-		})
-		texts[index].style.display = 'block'
-	})
-})
-
-texts[0].style.display = 'block'
-tabs[0].classList.add('active')
+setActive(0);
